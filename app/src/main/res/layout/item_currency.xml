@@ -64,7 +64,7 @@
             tools:text="123.456" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWeatherSell"
+            android:id="@+id/tvCurrencySell"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/padding_small"
@@ -89,9 +89,9 @@
             android:textColor="@color/red_ribbon"
             android:textSize="8sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/tvWeatherSell"
-            app:layout_constraintEnd_toStartOf="@id/tvWeatherSell"
-            app:layout_constraintTop_toTopOf="@id/tvWeatherSell"
+            app:layout_constraintBottom_toBottomOf="@id/tvCurrencySell"
+            app:layout_constraintEnd_toStartOf="@id/tvCurrencySell"
+            app:layout_constraintTop_toTopOf="@id/tvCurrencySell"
             tools:ignore="SmallSp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -111,7 +111,7 @@
             tools:text="Tomo / USD" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWeatherInfo"
+            android:id="@+id/tvCurrencyName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/padding_tiny"

@@ -8,7 +8,7 @@ val AppModule = module {
 
     viewModel { MainViewModel(get()) }
 
-    single { createGetPostsUseCase(get()) }
+    single { createGetCurrencyUseCase(get()) }
 
-    single { createPostRepository(get()) }
+    single { createCurrencyRepository(get()) }
 }

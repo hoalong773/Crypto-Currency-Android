@@ -55,10 +55,10 @@ fun createService(retrofit: Retrofit): ApiService {
     return retrofit.create(ApiService::class.java)
 }
 
-fun createPostRepository(apiService: ApiService): UserRepository {
+fun createCurrencyRepository(apiService: ApiService): UserRepository {
     return UserRepositoryImp(apiService)
 }
 
-fun createGetPostsUseCase(userRepository: UserRepository): GetListCryptoUseCase {
+fun createGetCurrencyUseCase(userRepository: UserRepository): GetListCryptoUseCase {
     return GetListCryptoUseCase(userRepository)
 }
