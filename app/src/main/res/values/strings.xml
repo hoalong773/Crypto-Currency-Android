@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CryptoCurrency</string>
+    <string name="searching">Searching…</string>
+    <string name="empty">Empty Crypto Currency!</string>
+    <string name="title_network_dialog">You are Offline</string>
+    <string name="content_network_dialog">We can\'t reached our network right now. \nPlease check your connection</string>
+    <string name="button_network_dialog">Open setting</string>
+    <string name="sell">SELL</string>
+</resources>

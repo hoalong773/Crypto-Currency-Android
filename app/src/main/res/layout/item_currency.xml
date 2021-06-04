@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currencyInfo"
+            type="com.namnguyen.cryptocurrency.domain.model.CryptoCurrencyModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:background="@drawable/bg_radius_border_non_bg"
+        android:padding="@dimen/padding_normal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCurrency"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dollar"
+            app:url="@{currencyInfo.icon}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCurrencyUp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivCurrency"
+            app:showUp="@{currencyInfo}"
+            app:srcCompat="@drawable/ic_up_arrow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCurrencyDown"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/ivCurrency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:showDown="@{currencyInfo}"
+            app:srcCompat="@drawable/ic_down_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCurrencyBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_small"
+            android:drawableStart="@drawable/ic_dollar_symbol"
+            android:drawablePadding="@dimen/padding_tiny"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/ivCurrencyUp"
+            app:layout_constraintTop_toTopOf="@id/ivCurrency"
+            app:priceBuy="@{currencyInfo}"
+            tools:text="123.456" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWeatherSell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_small"
+            android:layout_marginVertical="@dimen/padding_tiny"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/ivCurrencyUp"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrencyBuy"
+            app:priceSell="@{currencyInfo}"
+            tools:text="321" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIconSell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:rotation="90"
+            android:text="@string/sell"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+            android:textColor="@color/red_ribbon"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvWeatherSell"
+            app:layout_constraintEnd_toStartOf="@id/tvWeatherSell"
+            app:layout_constraintTop_toTopOf="@id/tvWeatherSell"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCurrencyBase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_normal"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvCurrencyBuy"
+            app:layout_constraintStart_toEndOf="@id/ivCurrency"
+            app:layout_constraintTop_toTopOf="@id/ivCurrency"
+            app:nameBase="@{currencyInfo}"
+            tools:text="Tomo / USD" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWeatherInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/padding_tiny"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/textColor"
+            app:layout_constraintEnd_toEndOf="@id/tvCurrencyBase"
+            app:layout_constraintStart_toStartOf="@id/tvCurrencyBase"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrencyBase"
+            app:nameCrypto="@{currencyInfo.name}"
+            tools:text="tomo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
